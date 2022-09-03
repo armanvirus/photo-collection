@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import NavContainer from './components/NavigationContainer'
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>photo album project is initiated am i huu</Text>
-      
-      <StatusBar style="auto" />
-    </View>
+     
+      <NavContainer/>
+   
   );
 }
 
