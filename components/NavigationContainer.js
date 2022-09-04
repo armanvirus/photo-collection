@@ -7,6 +7,7 @@ import Staffs from "../pages/Staffs";
 import Students from "../pages/Students";
 import Individual from "../pages/Individual";
 import Photo from "../pages/Photo";
+import {Fonts} from "../Store/Fonts"
 import { MaterialCommunityIcons,MaterialIcons } from '@expo/vector-icons';
 
 
@@ -18,7 +19,7 @@ const StaffsStack = createStackNavigator();
 
 function HomeStackScreen() {
     return (
-      <HomeStack.Navigator>
+      <HomeStack.Navigator screenOptions={{}}>
         <HomeStack.Screen
           name="Home"
           component={Students}
@@ -68,27 +69,27 @@ const NavContainer = ()=>{
       <Tab.Navigator screenOptions={{
         headerShown:false,
         tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
+        tabBarInactiveTintColor: Fonts.primaryColor2,
         tabBarStyle:{
-          paddingVertical: 10,
+          paddingVertical: 8,
           height:50
         }
       }}>
         <Tab.Screen 
         name="Explore"
         component={HomeStackScreen}
-        options={{tabBarIcon:()=>(<MaterialCommunityIcons name="select-group" size={28} color="black" />)}} />
+        options={{tabBarIcon:()=>(<MaterialCommunityIcons name="select-group" size={28} color={Fonts.primaryColor1} />)}} />
         <Tab.Screen 
         name="Staffs" 
         component={StaffsStackScreen}
         options={{
-          tabBarIcon:()=>(<MaterialIcons name="work-outline" size={24} color="black" />)
+          tabBarIcon:()=>(<MaterialIcons name="work-outline" size={24} color={Fonts.primaryColor1} />)
         }} />
         <Tab.Screen 
         name="About" 
         component={AboutStackScreen}
         options={{
-          tabBarIcon:()=>(<MaterialCommunityIcons name="text-box-multiple-outline" size={24} color="black" />)
+          tabBarIcon:()=>(<MaterialCommunityIcons name="text-box-multiple-outline" size={24} color={Fonts.primaryColor1} />)
         }}
          />
       </Tab.Navigator>
