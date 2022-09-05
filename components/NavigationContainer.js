@@ -8,6 +8,7 @@ import Students from "../pages/Students";
 import Individual from "../pages/Individual";
 import Photo from "../pages/Photo";
 import {Fonts} from "../Store/Fonts"
+import Header from "../components/Header"
 import { MaterialCommunityIcons,MaterialIcons } from '@expo/vector-icons';
 
 
@@ -23,12 +24,21 @@ function HomeStackScreen() {
         <HomeStack.Screen
           name="Home"
           component={Students}
-          options={{ tabBarLabel: 'Home!' }}
+          options={{ 
+            tabBarLabel: 'Home!',
+            headerTitle:()=> (<Header/>),
+          headerStyle:{
+            height:100,
+          } }}
+
         />
         <HomeStack.Screen
           name="Student"
           component={Individual}
-          options={{ tabBarLabel: 'Student' }}
+          options={{ 
+            tabBarLabel: 'Student',
+            
+           }}
         />
         <HomeStack.Screen
           name="Photo"

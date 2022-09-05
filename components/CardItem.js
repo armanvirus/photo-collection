@@ -13,9 +13,15 @@ const CardItem = ({details})=>{
         )
     }
 
+    const handlePress = ()=>{
+        console.log(details.id)
+    }
+
     console.log(pickHeight())
     return(
-        <TouchableOpacity style={styles.masonryContainer}>
+        <TouchableOpacity 
+        onPress={()=>handlePress()}
+        style={styles.masonryContainer}>
             <View>
                 <Image style={{
                     height:pickHeight(),

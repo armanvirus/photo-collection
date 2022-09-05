@@ -25,19 +25,23 @@ const Students = ()=>{
             paddingVertical:5
         }}>
         <View style={styles.heading}>
-        <Ionicons name="ios-grid" size={25} color={Fonts.primaryColor1} />
+        <Ionicons 
+        name="ios-grid" 
+        size={25} 
+        color={Fonts.primaryColor1} />
             <Text style={[
                 styles.headingText,
                 {fontFamily: 'RobotoCondensed-Bold',}
             ]}
-            >Explore Alumni</Text>
+            >Explore <Text style={{color:Fonts.primaryColor2}}>Alumni</Text></Text>
         </View>
         <MasonryList
         style={{
-            paddingVertical:2,
+            paddingVertical:3,
+            backgroundColor:Fonts.white
         }}
         data={StudentsDetails}
-        keyExtractor={(item)=> item.phone}
+        keyExtractor={(item)=> item.id}
         numColumns={2}
         showsVerticalScrollIndicator={false}
         renderItem={({item}) => <CardItem details={item} />}
@@ -57,14 +61,14 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         alignItems:"center",
         marginVertical:10,
-        height:60,
+        height:40,
         paddingHorizontal:15,
-        paddingVertical:15
+        paddingVertical:5
     },
     headingText:{
         fontSize:18,
         marginLeft:10,
-        color:Fonts.primaryColor2
+        color:Fonts.primaryColor1
     
     }
 })
